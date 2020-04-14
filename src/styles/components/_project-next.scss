@@ -1,0 +1,14 @@
+.next-project {
+  color: $white;
+  min-height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__subtitle {
+    margin-bottom: $sp_2;
+  }
+  &__title {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,71 @@
+.project-grid {
+  background-color: $black;
+  padding-left: $sp_1;
+  padding-right: $sp_1;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: $sp_1;
+  @include mq(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mq(desktop-xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    position: relative;
+    color: $white;
+    margin-bottom: 0;
+    overflow: hidden;
+    &:hover {
+      .item-image::after {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .item-title::before {
+        content: "";
+        width: 1.8vw;
+        height: 1.8vw;
+        background-color: $white;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: $sp_2;
+      }
+    }
+    .item-overlay {
+      background: $black;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: 3;
+    }
+
+    .item-title {
+      position: absolute;
+      bottom: $sp_2;
+      left: $sp_2;
+      z-index: 2;
+    }
+    .item-image {
+      height: 100%;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: red;
+        mix-blend-mode: difference;
+      }
+      img {
+        filter: grayscale(1);
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

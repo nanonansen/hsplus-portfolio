@@ -1,0 +1,70 @@
+.site-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: $sp_2;
+  width: 100%;
+  z-index: 3;
+  color: $white;
+  background: transparent;
+  transition: background 300ms ease-in;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__logo {
+    a {
+      mix-blend-mode: screen;
+      text-decoration: none;
+    }
+  }
+  &__menuBtn {
+    @include mq(tablet) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+  &__nav {
+    display: none;
+    .nav-item {
+      text-decoration: none;
+      margin-left: $sp_3;
+      position: relative;
+      &:first-child {
+        margin-left: 0;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        display: block;
+        margin-top: 2px;
+        right: 0;
+        bottom: -3px;
+        background: #fff;
+        transition: width 0.3s ease-in-out;
+        -webkit-transition: width 0.3s ease-in-out;
+      }
+      &:hover::after {
+        width: 100%;
+        left: 0;
+        background: #fff;
+      }
+      &.active::after {
+        width: 100%;
+        left: 0;
+        background: #fff;
+      }
+    }
+    @include mq(tablet) {
+      display: inline-block;
+    }
+  }
+
+  &.scrolling {
+    background: $black;
+  }
+}

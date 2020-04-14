@@ -1,0 +1,27 @@
+@mixin mq($size) {
+  @if $size == mobile {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  } @else if $size == untilTablet {
+    @media (max-width: $tablet - 1) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  } @else if $size == desktop-wide {
+    @media (min-width: $desktop-wide) {
+      @content;
+    }
+  } @else if $size == desktop-xl {
+    @media (min-width: $desktop-xl) {
+      @content;
+    }
+  }
+}

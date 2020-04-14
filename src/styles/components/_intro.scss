@@ -1,0 +1,19 @@
+.intro {
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: $black;
+  padding: $sp_5 $sp_2;
+  &__inner {
+    max-width: 90vw;
+    @include mq(tablet) {
+      max-width: 45vw;
+      //margin-left: 50vw;
+    }
+    p {
+      text-align: center;
+      color: $white;
+    }
+  }
+}

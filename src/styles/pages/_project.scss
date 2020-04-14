@@ -1,0 +1,95 @@
+.project {
+  overflow: hidden;
+  &__header {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    .cover-overlay {
+      background: $white;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: 3;
+    }
+    .header-image {
+      height: 100%;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 2;
+      }
+    }
+    .project-title {
+      position: absolute;
+      left: $sp_2;
+      bottom: $sp_2;
+      z-index: 2;
+      color: $white;
+    }
+  }
+  &__content {
+    background: $white;
+  }
+}
+
+.content-row {
+  min-height: 50vh;
+  padding: 0 $sp_1;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: $sp_1;
+  @include mq(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 75vh;
+  }
+  @include mq(desktop-xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .block {
+  }
+  .block--text {
+    align-self: center;
+    grid-column-start: 1;
+    text-align: left;
+
+    @include mq(tablet) {
+      grid-column-start: 1;
+    }
+    @include mq(desktop-xl) {
+      grid-column-start: 1;
+    }
+  }
+  .block--image {
+    grid-column-start: 1;
+    text-align: center;
+    margin-bottom: $sp_1;
+
+    &.align-Left {
+      grid-column-start: 1;
+    }
+    &.align-Center {
+      grid-column-start: 1;
+      @include mq(tablet) {
+        grid-column-start: 2;
+      }
+    }
+    &.align-Right {
+      grid-column-start: 1;
+      @include mq(tablet) {
+        grid-column-start: 2;
+      }
+      @include mq(desktop-xl) {
+        grid-column-start: 3;
+      }
+    }
+  }
+}

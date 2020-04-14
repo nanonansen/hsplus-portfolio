@@ -1,0 +1,21 @@
+.title-xl {
+  font-size: $fs_xl;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+  @include mq(tablet) {
+    font-size: $fs_xl_var;
+  }
+}
+
+.title-l {
+  font-size: $fs_l;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  @include mq(tablet) {
+    font-size: $fs_l_var;
+  }
+}
